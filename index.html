@@ -2,172 +2,298 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Digital Trade Credit Bank</title>
-    <link rel="stylesheet" href="assets/css/main.css" />
-    <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-    <style>
-        /* Global Reset */
-        * { margin:0; padding:0; box-sizing:border-box; }
-        body { font-family: 'Helvetica Neue', Arial, sans-serif; background:#fff; color:#000; line-height:1.6; }
-        a { color:inherit; text-decoration:none; }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Digital Trade Credit Bank</title>
+  <link rel="stylesheet" href="assets/css/main.css" />
+  <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+  <style>
+    /* Global Reset & Variables */
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    :root {
+      --primary: #000;
+      --secondary: #fff;
+      --accent: #007bff;
+      --text: #111;
+      --muted: #555;
+      --bg-light: #f9f9f9;
+      --radius: 8px;
+      --spacing: 1rem;
+    }
+    body {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      background: var(--secondary);
+      color: var(--text);
+      line-height: 1.6;
+    }
+    a { color: var(--accent); text-decoration: none; }
+    h1, h2, h3 { color: var(--primary); margin-bottom: 0.5rem; }
+    p, li, dd { margin-bottom: var(--spacing); }
 
-        /* Header */
-        #header { background:#fff; padding:4rem 2rem 2rem; text-align:center; border-bottom:1px solid #ddd; }
-        #header h1 { font-size:3rem; margin-bottom:0.5rem; }
-        #header p { font-size:1.2rem; color:#555; max-width:800px; margin:0 auto; }
+    /* Hero */
+    .hero {
+      padding: 6rem 2rem;
+      text-align: center;
+      background: var(--bg-light);
+    }
+    .hero h1 { font-size: 3rem; margin-bottom: var(--spacing); }
+    .hero p { font-size: 1.2rem; color: var(--muted); max-width: 700px; margin: 0 auto 2rem; }
+    .hero .btn {
+      display: inline-block;
+      margin: 0 0.5rem;
+      padding: 1rem 2rem;
+      border-radius: var(--radius);
+      text-transform: uppercase;
+      font-weight: 600;
+      transition: background 0.3s;
+    }
+    .hero .btn.primary { background: var(--primary); color: var(--secondary); }
+    .hero .btn.primary:hover { background: var(--accent); }
+    .hero .btn.secondary { background: var(--secondary); border: 2px solid var(--primary); color: var(--primary); }
+    .hero .btn.secondary:hover { background: var(--bg-light); }
 
-        /* CTA Buttons */
-        #cta-buttons { display:flex; justify-content:center; gap:1.5rem; margin:2rem 0; }
-        #cta-buttons .btn { padding:1rem 2rem; border-radius:5px; font-weight:600; text-transform:uppercase; transition:background 0.3s; }
-        #cta-buttons .primary { background:#000; color:#fff; }
-        #cta-buttons .primary:hover { background:#333; }
-        #cta-buttons .secondary { background:#fff; border:2px solid #000; color:#000; }
-        #cta-buttons .secondary:hover { background:#f0f0f0; }
+    /* Features */
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 2rem;
+      max-width: 1000px;
+      margin: 3rem auto;
+      padding: 0 2rem;
+    }
+    .feature {
+      background: var(--secondary);
+      border: 1px solid var(--muted);
+      border-radius: var(--radius);
+      padding: 2rem 1.5rem;
+      text-align: center;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .feature:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+    }
+    .feature-icon { font-size: 2.5rem; margin-bottom: 1rem; color: var(--accent); }
+    .feature-title { font-size: 1.5rem; margin-bottom: 0.5rem; }
+    .feature-desc { font-size: 1rem; color: var(--muted); }
 
-        /* Features */
-        .features { display:grid; grid-template-columns:repeat(auto-fit, minmax(280px,1fr)); gap:2rem; max-width:1000px; margin:0 auto 4rem; padding:0 2rem; }
-        .feature-card { background:#fff; border:1px solid #000; border-radius:8px; padding:2rem 1rem; text-align:center; transition:transform 0.3s, box-shadow 0.3s; }
-        .feature-card:hover { transform:translateY(-5px); box-shadow:0 8px 16px rgba(0,0,0,0.1); }
-        .feature-icon { font-size:2.5rem; margin-bottom:1rem; color:#000; }
-        .feature-title { font-size:1.5rem; margin-bottom:0.5rem; }
-        .feature-desc { font-size:1rem; color:#333; }
+    /* About */
+    #about {
+      background: var(--bg-light);
+      padding: 4rem 2rem;
+    }
+    #about .inner {
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    #about h2 { font-size: 2rem; margin-bottom: 1rem; }
+    #about p { font-size: 1.1rem; color: var(--muted); }
 
-        /* Sections */
-        section { padding:4rem 0; }
-        .wrapper { background:#f9f9f9; }
-        .wrapper.light { background:#fff; }
-        .inner { max-width:900px; margin:0 auto; padding:0 2rem; }
-        h2 { font-size:2rem; margin-bottom:1rem; text-align:center; }
-        p, dd { font-size:1.1rem; color:#555; margin-bottom:1.5rem; }
+    /* Testimonials */
+    #testimonials { padding: 4rem 2rem; }
+    #testimonials .inner {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    #testimonials h2 { text-align: center; margin-bottom: 2rem; }
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+    .testimonial {
+      background: var(--secondary);
+      border: 1px solid var(--muted);
+      border-radius: var(--radius);
+      padding: 2rem;
+      font-style: italic;
+      position: relative;
+    }
+    .testimonial::before {
+      content: '“';
+      font-size: 3rem;
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      color: var(--bg-light);
+    }
+    .testimonial-author {
+      text-align: right;
+      margin-top: 1rem;
+      font-weight: 600;
+      color: var(--primary);
+    }
 
-        /* Testimonials */
-        .testimonials { background:#fff; }
-        .testimonials .grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(300px,1fr)); gap:2rem; }
-        .testimonial { background:#fff; border:1px solid #ddd; border-radius:8px; padding:2rem; font-style:italic; position:relative; }
-        .testimonial::before { content:'“'; font-size:3rem; position:absolute; top:10px; left:10px; color:#ddd; }
-        .testimonial-author { text-align:right; margin-top:1rem; font-weight:600; color:#000; }
+    /* FAQ */
+    #faq {
+      background: var(--bg-light);
+      padding: 4rem 2rem;
+    }
+    #faq .inner { max-width: 800px; margin: 0 auto; }
+    #faq h2 { text-align: center; margin-bottom: 1.5rem; }
+    .faq dl { margin: 0; }
+    .faq dt { font-weight: 600; margin-top: 1rem; }
+    .faq dd { margin-left: 1rem; margin-bottom: 1rem; color: var(--muted); }
 
-        /* FAQ */
-        .faq dl { max-width:800px; margin:0 auto; }
-        .faq dt { font-weight:600; margin-top:1.5rem; }
-        .faq dd { margin-left:1rem; }
+    /* Contact */
+    #contact { padding: 4rem 2rem; }
+    #contact .inner { max-width: 600px; margin: 0 auto; }
+    #contact h2 { text-align: center; margin-bottom: 1.5rem; }
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    .contact-form input,
+    .contact-form textarea {
+      padding: 1rem;
+      border: 1px solid var(--muted);
+      border-radius: var(--radius);
+      font-size: 1rem;
+      width: 100%;
+    }
+    .contact-form button {
+      align-self: center;
+      padding: 1rem 2rem;
+      border: none;
+      background: var(--primary);
+      color: var(--secondary);
+      text-transform: uppercase;
+      font-weight: 600;
+      border-radius: var(--radius);
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    .contact-form button:hover { background: var(--accent); }
 
-        /* Contact */
-        .contact .form { max-width:600px; margin:0 auto; display:flex; flex-direction:column; gap:1rem; }
-        .contact input, .contact textarea { width:100%; padding:1rem; border:1px solid #ccc; border-radius:5px; font-size:1rem; }
-        .contact button { width:fit-content; align-self:center; margin-top:1rem; padding:1rem 2rem; }
+    /* Footer */
+    footer {
+      background: var(--bg-light);
+      padding: 2rem;
+      text-align: center;
+      border-top: 1px solid var(--muted);
+    }
+    footer p { margin-bottom: 1rem; color: var(--muted); }
+    footer .icons { list-style: none; display: inline-flex; gap: 1rem; }
+    footer .icons li a {
+      font-size: 1.2rem;
+      color: var(--muted);
+      transition: color 0.3s;
+    }
+    footer .icons li a:hover { color: var(--primary); }
 
-        /* Footer */
-        footer { text-align:center; padding:2rem; background:#fff; border-top:1px solid #ddd; }
-        footer p { margin-bottom:1rem; }
-        footer .icons li { display:inline-block; margin:0 0.5rem; }
-
-        /* Smooth scroll */
-        html { scroll-behavior:smooth; }
-    </style>
+    /* Responsive */
+    @media(max-width: 768px) {
+      .hero h1 { font-size: 2.5rem; }
+      .features,
+      .testimonials-grid { grid-template-columns: 1fr; }
+    }
+  </style>
 </head>
 
 <body>
-    <div id="wrapper">
-        <header id="header">
-            <h1>Digital Trade Credit Bank</h1>
-            <p>Turnkey fintech platform underwriting up to <strong>$1 Billion</strong> in trade credit.</p>
-        </header>
-        <div id="cta-buttons">
-            <a href="https://docusign.com/nda" class="btn primary">Sign NDA</a>
-            <a href="https://calendly.com/book" class="btn secondary">Book a 15 Min Call</a>
-        </div>
-        <section class="features">
-            <div class="feature-card">
-                <span class="feature-icon fa-cogs"></span>
-                <h3 class="feature-title">Seamless Onboarding</h3>
-                <p class="feature-desc">All licensing, infrastructure, and compliance modules are fully configured—deploy within two weeks.</p>
-            </div>
-            <div class="feature-card">
-                <span class="feature-icon fa-bolt"></span>
-                <h3 class="feature-title">Go-Live in 14 Days</h3>
-                <p class="feature-desc">Rapid integration with your existing payment stack for immediate market entry.</p>
-            </div>
-            <div class="feature-card">
-                <span class="feature-icon fa-handshake"></span>
-                <h3 class="feature-title">Strategic Partnerships</h3>
-                <p class="feature-desc">Pre-negotiated integrations with top B2B payment networks to jumpstart transactions.</p>
-            </div>
-            <div class="feature-card">
-                <span class="feature-icon fa-lock"></span>
-                <h3 class="feature-title">Risk Mitigation</h3>
-                <p class="feature-desc">Escrow-backed transaction ensures zero capital exposure until due diligence is approved.</p>
-            </div>
-        </section>
-        <section id="about" class="wrapper light">
-            <div class="inner">
-                <h2>About This Solution</h2>
-                <p>Our Digital Trade Credit Bank offers SMEs and corporates an end-to-end platform for trade finance, including KYC, credit scoring, risk management, and disbursement. Reduce friction and accelerate cross-border commerce.</p>
-            </div>
-        </section>
-        <section id="testimonials" class="testimonials">
-            <div class="inner">
-                <h2>What Our Clients Say</h2>
-                <div class="grid">
-                    <div class="testimonial">
-                        <p>“The integration was seamless—went live in under 2 weeks and boosted our liquidity by 30%.”</p>
-                        <p class="testimonial-author">— CFO, Global Electronics Inc.</p>
-                    </div>
-                    <div class="testimonial">
-                        <p>“A game-changer for our supply chain financing. The escrow feature gave us full confidence in the process.”</p>
-                        <p class="testimonial-author">— CEO, AgroFood Traders</p>
-                    </div>
-                    <div class="testimonial">
-                        <p>“Expanded our working capital with zero upfront risk. Exceptional service!”</p>
-                        <p class="testimonial-author">— Finance Director, AutoParts Co.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section id="faq" class="faq">
-            <div class="inner">
-                <h2>Frequently Asked Questions</h2>
-                <dl>
-                    <dt>How quickly can we integrate?</dt>
-                    <dd>Integration typically completes within <strong>14 days</strong> with our dedicated support team.</dd>
-                    <dt>What fees apply?</dt>
-                    <dd>We charge a flat setup fee and <strong>transaction-based fees</strong> only on utilized credit.</dd>
-                    <dt>Is our data secure?</dt>
-                    <dd>We employ <strong>bank-grade encryption</strong> and comply with industry standards (ISO 27001).</dd>
-                </dl>
-            </div>
-        </section>
-        <section id="contact" class="contact">
-            <div class="inner">
-                <h2>Get In Touch</h2>
-                <form class="form">
-                    <div class="fields">
-                        <input type="text" name="name" placeholder="Your Name" required />
-                        <input type="email" name="email" placeholder="Your Email" required />
-                        <textarea name="message" rows="4" placeholder="Your Message..." required></textarea>
-                    </div>
-                    <button class="btn primary" type="submit">Send Inquiry</button>
-                </form>
-            </div>
-        </section>
-        <footer id="footer">
-            <div class="inner">
-                <p>&copy; 2025 VC Partners. All rights reserved.</p>
-                <ul class="icons">
-                    <li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
-                    <li><a href="#" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
-                    <li><a href="#" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
-                </ul>
-            </div>
-        </footer>
+  <!-- Hero -->
+  <section class="hero">
+    <h1>Digital Trade Credit Bank</h1>
+    <p>Turnkey fintech platform underwriting up to <strong>$1 Billion</strong> in trade credit — live in 14 days with escrow-backed security.</p>
+    <a href="https://docusign.com/nda" class="btn primary">Sign NDA</a>
+    <a href="https://calendly.com/book" class="btn secondary">Book a 15 Min Call</a>
+  </section>
+
+  <!-- Features -->
+  <section class="features">
+    <div class="feature">
+      <span class="feature-icon fa-cogs"></span>
+      <h3 class="feature-title">Seamless Onboarding</h3>
+      <p class="feature-desc">Full licensing & compliance triggered within two weeks.</p>
     </div>
-    <script src="assets/js/jquery.min.js"></script>
-    <script src="assets/js/browser.min.js"></script>
-    <script src="assets/js/breakpoints.min.js"></script>
-    <script src="assets/js/util.js"></script>
-    <script src="assets/js/main.js"></script>
+    <div class="feature">
+      <span class="feature-icon fa-bolt"></span>
+      <h3 class="feature-title">Rapid Integration</h3>
+      <p class="feature-desc">Plug directly into existing payment systems—no dev overhead.</p>
+    </div>
+    <div class="feature">
+      <span class="feature-icon fa-handshake"></span>
+      <h3 class="feature-title">Trusted Partnerships</h3>
+      <p class="feature-desc">Pre-negotiated with top B2B networks for instant settlement.</p>
+    </div>
+    <div class="feature">
+      <span class="feature-icon fa-lock"></span>
+      <h3 class="feature-title">Zero Risk</h3>
+      <p class="feature-desc">Escrow model shields your capital during due diligence.</p>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about">
+    <div class="inner">
+      <h2>About Our Solution</h2>
+      <p>We empower SMEs and corporates with a full-stack trade finance platform—KYC, credit analysis, risk monitoring, and global disbursement.</p>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section id="testimonials">
+    <div class="inner">
+      <h2>Client Success</h2>
+      <div class="testimonials-grid">
+        <div class="testimonial">
+          <p>“Launched in 10 days, boosted liquidity by 40%.”</p>
+          <p class="testimonial-author">— CFO, TechDistributor Inc.</p>
+        </div>
+        <div class="testimonial">
+          <p>“Our supply chain costs dropped 15% thanks to this.”</p>
+          <p class="testimonial-author">— Head of Procurement, GlobalFoods</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq">
+    <div class="inner">
+      <h2>FAQs</h2>
+      <dl>
+        <dt>Integration timeline?</dt>
+        <dd>Complete setup within <strong>14 days</strong> with dedicated support.</dd>
+        <dt>Fee structure?</dt>
+        <dd>One-time setup fee + <strong>transaction-based</strong> charges.</dd>
+        <dt>Security standards?</dt>
+        <dd>Compliant with ISO 27001, end-to-end encryption.</dd>
+      </dl>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact">
+    <div class="inner">
+      <h2>Contact Us</h2>
+      <form class="contact-form">
+        <input type="text" name="name" placeholder="Name" required />
+        <input type="email" name="email" placeholder="Email" required />
+        <textarea name="message" rows="4" placeholder="Message..." required></textarea>
+        <button type="submit" class="btn primary">Submit</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 VC Partners. All rights reserved.</p>
+    <ul class="icons">
+      <li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+      <li><a href="#" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
+      <li><a href="#" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+    </ul>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="assets/js/jquery.min.js"></script>
+  <script src="assets/js/browser.min.js"></script>
+  <script src="assets/js/breakpoints.min.js"></script>
+  <script src="assets/js/util.js"></script>
+  <script src="assets/js/main.js"></script>
 </body>
 
 </html>
