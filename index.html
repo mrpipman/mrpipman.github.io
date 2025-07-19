@@ -6,81 +6,110 @@
 -->
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Digital Trade Credit Bank</title>
     <link rel="stylesheet" href="assets/css/main.css" />
     <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+    <style>
+      /* Global color and typography */
+      body { background: #FFFFFF !important; color: #000000 !important; font-family: 'Helvetica Neue', Arial, sans-serif; line-height: 1.6; }
+      h1 { font-size: 2.5rem; margin-bottom: 0.5rem; }
+      h2 { font-size: 1.5rem; margin: 1rem 0 0.5rem; }
+      p { margin-bottom: 1rem; }
+
+      /* Sticky header */
+      #header { position: sticky; top: 0; background: #FFFFFF; z-index: 1000; padding: 2em 1em; box-shadow: 0 2px 8px rgba(0,0,0,0.05); }
+
+      /* Centered CTA */
+      #cta-buttons { text-align: center; margin: 2em 0; }
+      #cta-buttons .button {
+        margin: 0 1em; padding: 0.75em 1.5em; border-radius: 4px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em;
+      }
+      a.button.primary { background: #000000 !important; color: #FFFFFF !important; border: none !important; }
+      a.button { background: #FFFFFF !important; color: #000000 !important; border: 2px solid #000000 !important; }
+
+      /* Features grid */
+      #features { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1rem; margin: 0 auto 2em; max-width: 90%; padding: 0; }
+      #features article { background: #FFFFFF !important; color: #000000 !important; border: 1px solid #000000 !important; padding: 1.5em; border-radius: 6px; text-align: center; transition: transform 0.3s ease; }
+      #features article:hover { transform: translateY(-5px); }
+      #features .icon { font-size: 2rem; margin-bottom: 0.5rem; display: inline-block; }
+
+      /* Footer styling */
+      footer { text-align: center; padding: 2em 1em; font-size: 0.9rem; border-top: 1px solid #ddd; }
+      footer a { color: #000000; text-decoration: underline; }
+
+      /* Smooth scroll */
+      html { scroll-behavior: smooth; }
+    </style>
 </head>
-<body class="is-preload">
+<body>
+    <div id="wrapper">
 
-    <!-- Wrapper -->
-        <div id="wrapper">
-
-            <!-- Header -->
-                <header id="header">
-                    <h1>Digital Trade Credit Bank</h1>
-                    <p>Turnkey fintech platform underwriting up to <strong>$1&nbsp;Billion</strong> in trade credit</p>
-                    <nav>
-                        <ul>
-                            <li><a href="https://docusign.com/your-nda-link" class="button primary">Sign NDA</a></li>
-                            <li><a href="https://calendly.com/your-calendar-link" class="button">Book a 15&nbsp;min Call</a></li>
-                        </ul>
-                    </nav>
-                </header>
-
-            <!-- Main -->
-                <div id="main">
-
-                    <!-- Features -->
-                        <section id="features" class="tiles">
-
-                            <article>
-                                <span class="icon solid major fa-cogs"></span>
-                                <h2>Seamless Onboarding</h2>
-                                <p>All licensing, infrastructure, and compliance modules fully configured—deploy within two weeks.</p>
-                            </article>
-
-                            <article>
-                                <span class="icon solid major fa-bolt"></span>
-                                <h2>Go‑Live in 14 Days</h2>
-                                <p>Rapid integration with your existing payment stack for immediate market entry.</p>
-                            </article>
-
-                            <article>
-                                <span class="icon solid major fa-handshake"></span>
-                                <h2>Strategic Partnerships</h2>
-                                <p>Pre‑negotiated integrations with top B2B payment networks to jumpstart transactions.</p>
-                            </article>
-
-                            <article>
-                                <span class="icon solid major fa-lock"></span>
-                                <h2>Risk Mitigation</h2>
-                                <p>Escrow‑backed transaction ensures zero capital exposure until due diligence is approved.</p>
-                            </article>
-
-                        </section>
-
-                </div>
-
-            <!-- Footer -->
-                <footer id="footer">
-                    <p>This page is for qualified buyers only. Further details (statutes, contracts, financials, KPIs) available under NDA.</p>
-                    <ul class="copyright">
-                        <li>&copy; 2025 Your Name/VAT ITXXXXXXXXXX</li>
-                        <li>Design: HTML5 UP</li>
-                        <li>License: <a href="https://html5up.net/license">CCA 3.0</a></li>
-                    </ul>
-                </footer>
-
+      <!-- Header -->
+      <header id="header">
+        <div class="inner">
+          <h1>Digital Trade Credit Bank</h1>
+          <p>Turnkey fintech platform underwriting up to <strong>$1&nbsp;Billion</strong> in trade credit</p>
+          <div id="cta-buttons">
+            <a href="https://docusign.com/your-nda-link" class="button primary">Sign NDA</a>
+            <a href="https://calendly.com/your-calendar-link" class="button">Book a 15&nbsp;min Call</a>
+          </div>
         </div>
+      </header>
+
+      <!-- Call To Action Buttons -->
+      <div id="cta-buttons">
+        <a href="https://docusign.com/your-nda-link" class="button primary">Sign NDA</a>
+        <a href="https://calendly.com/your-calendar-link" class="button">Book a 15 min Call</a>
+      </div>
+
+      <!-- Main -->
+      <div id="main">
+        <!-- Features -->
+        <section id="features">
+          <article>
+            <span class="icon solid major fa-cogs"></span>
+            <h2>Seamless Onboarding</h2>
+            <p>All licensing, infrastructure, and compliance modules are fully configured—deploy within two weeks.</p>
+          </article>
+          <article>
+            <span class="icon solid major fa-bolt"></span>
+            <h2>Go‑Live in 14 Days</h2>
+            <p>Rapid integration with your existing payment stack for immediate market entry.</p>
+          </article>
+          <article>
+            <span class="icon solid major fa-handshake"></span>
+            <h2>Strategic Partnerships</h2>
+            <p>Pre‑negotiated integrations with top B2B payment networks to jumpstart transactions.</p>
+          </article>
+          <article>
+            <span class="icon solid major fa-lock"></span>
+            <h2>Risk Mitigation</h2>
+            <p>Escrow‑backed transaction ensures zero capital exposure until due diligence is approved.</p>
+          </article>
+        </section>
+      </div>
+
+      <!-- Footer -->
+      <footer id="footer">
+        <p>This page is for qualified buyers only. Further details (statutes, contracts, financials, KPIs) available under NDA.</p>
+        <ul>
+          <li>&copy; 2025 VC Partners</li>
+          <li>Design: HTML5 UP</li>
+          <li>License: <a href="https://html5up.net/license">CCA 3.0</a></li>
+        </ul>
+      </footer>
+
+    </div>
 
     <!-- Scripts -->
-        <script src="assets/js/jquery.min.js"></script>
-        <script src="assets/js/browser.min.js"></script>
-        <script src="assets/js/breakpoints.min.js"></script>
-        <script src="assets/js/util.js"></script>
-        <script src="assets/js/main.js"></script>
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
 
 </body>
 </html>
+
