@@ -12,27 +12,25 @@
     <link rel="stylesheet" href="assets/css/main.css" />
     <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
     <style>
-      /* Global color and typography */
-      body { background: #FFFFFF !important; color: #000000 !important; font-family: 'Helvetica Neue', Arial, sans-serif; line-height: 1.6; }
+      /* Global styling */
+      body { background: #FFFFFF; color: #000000; font-family: 'Helvetica Neue', Arial, sans-serif; line-height: 1.6; margin: 0; }
       h1 { font-size: 2.5rem; margin-bottom: 0.5rem; }
       h2 { font-size: 1.5rem; margin: 1rem 0 0.5rem; }
       p { margin-bottom: 1rem; }
 
-      /* Sticky header */
-      #header { position: sticky; top: 0; background: #FFFFFF; z-index: 1000; padding: 2em 1em; box-shadow: 0 2px 8px rgba(0,0,0,0.05); }
+      /* Header styling - static */
+      #header { background: #FFFFFF; padding: 3em 1em 1em; text-align: center; border-bottom: 1px solid #eee; }
 
-      /* Centered CTA */
-      #cta-buttons { text-align: center; margin: 2em 0; }
-      #cta-buttons .button {
-        margin: 0 1em; padding: 0.75em 1.5em; border-radius: 4px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em;
-      }
-      a.button.primary { background: #000000 !important; color: #FFFFFF !important; border: none !important; }
-      a.button { background: #FFFFFF !important; color: #000000 !important; border: 2px solid #000000 !important; }
+      /* CTA section below header */
+      #cta-buttons { display: flex; justify-content: center; gap: 1em; margin: 1.5em 0 2em; }
+      #cta-buttons .button { padding: 0.75em 1.5em; border-radius: 4px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; text-decoration: none; }
+      .button.primary { background: #000000; color: #FFFFFF; border: none; }
+      .button.secondary { background: #FFFFFF; color: #000000; border: 2px solid #000000; }
 
       /* Features grid */
-      #features { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1rem; margin: 0 auto 2em; max-width: 90%; padding: 0; }
-      #features article { background: #FFFFFF !important; color: #000000 !important; border: 1px solid #000000 !important; padding: 1.5em; border-radius: 6px; text-align: center; transition: transform 0.3s ease; }
-      #features article:hover { transform: translateY(-5px); }
+      #features { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1rem; max-width: 1000px; margin: 0 auto 2em; padding: 0 1em; }
+      #features article { background: #FFFFFF; color: #000000; border: 1px solid #000000; padding: 1.5em; border-radius: 6px; text-align: center; transition: transform 0.3s ease; }
+      #features article:hover { transform: translateY(-5px); box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
       #features .icon { font-size: 2rem; margin-bottom: 0.5rem; display: inline-block; }
 
       /* Footer styling */
@@ -48,20 +46,14 @@
 
       <!-- Header -->
       <header id="header">
-        <div class="inner">
-          <h1>Digital Trade Credit Bank</h1>
-          <p>Turnkey fintech platform underwriting up to <strong>$1&nbsp;Billion</strong> in trade credit</p>
-          <div id="cta-buttons">
-            <a href="https://docusign.com/your-nda-link" class="button primary">Sign NDA</a>
-            <a href="https://calendly.com/your-calendar-link" class="button">Book a 15&nbsp;min Call</a>
-          </div>
-        </div>
+        <h1>Digital Trade Credit Bank</h1>
+        <p>Turnkey fintech platform underwriting up to <strong>$1&nbsp;Billion</strong> in trade credit</p>
       </header>
 
-      <!-- Call To Action Buttons -->
+      <!-- CTA Buttons -->
       <div id="cta-buttons">
         <a href="https://docusign.com/your-nda-link" class="button primary">Sign NDA</a>
-        <a href="https://calendly.com/your-calendar-link" class="button">Book a 15 min Call</a>
+        <a href="https://calendly.com/your-calendar-link" class="button secondary">Book a 15&nbsp;min Call</a>
       </div>
 
       <!-- Main -->
@@ -109,7 +101,6 @@
     <script src="assets/js/breakpoints.min.js"></script>
     <script src="assets/js/util.js"></script>
     <script src="assets/js/main.js"></script>
-
 </body>
 </html>
 
