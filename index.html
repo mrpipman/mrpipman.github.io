@@ -8,34 +8,54 @@
   <link rel="stylesheet" href="assets/css/main.css" />
   <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
   <style>
-    /* Global Reset & Variables */
-    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-    :root {
-      --primary: #fff; /* text */
-      --secondary: #000; /* background */
-      --accent: #1e90ff; /* accent color */
-      --text: #fff; /* main text color */
-      --muted: #ccc; /* muted text color */
-      --bg-light: #111; /* section background */
-      --radius: 8px;
-      --spacing: 1rem;
-    }
-    body {
-      font-family: 'Helvetica Neue', Arial, sans-serif;
-      background: var(--secondary);
-      color: var(--text);
-      line-height: 1.6;
-    }
-    strong { color: var(--accent); }
-    a { color: var(--accent); text-decoration: none; }
-    h1, h2, h3 { color: var(--primary); margin-bottom: 0.5rem; }
-    p, li, dd { margin-bottom: var(--spacing); }
-
-    /* Hero */
-    .hero {
-      padding: 6rem 2rem;
+    /* Hero and Button Styling Fix */
+    .hero-buttons a.btn, .hero-buttons button.btn, .contact-form button.btn {
+      display: inline-block;
+      width: auto;
+      min-width: 200px;
       text-align: center;
-      background: var(--bg-light);
+      background: var(--secondary);
+      color: var(--primary);
+      border: 2px solid var(--primary);
+      border-radius: var(--radius);
+      padding: var(--spacing) 2rem;
+      text-transform: uppercase;
+      font-weight: 600;
+      transition: background 0.3s, color 0.3s;
+    }
+    .hero-buttons a.btn:hover, .hero-buttons button.btn:hover, .contact-form button.btn:hover {
+      background: var(--primary);
+      color: var(--secondary);
+    }
+
+    /* Center hero buttons */
+    .hero-buttons {
+      display: flex;
+      justify-content: center;
+      gap: var(--spacing);
+      margin-top: var(--spacing);
+    }
+
+    /* Center contact form button and inputs */
+    #contact .contact-form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: var(--spacing);
+    }
+    #contact .contact-form input,
+    #contact .contact-form textarea {
+      max-width: 400px;
+      width: 100%;
+    }
+    #contact .contact-form button.btn {
+      max-width: 240px;
+      width: 100%;
+    }
+
+    /* Ensure Schedule button not misaligned */
+    #scheduleBtn {
+      margin: 0;
     }
     .hero h1 { font-size: 3rem; margin-bottom: var(--spacing); }
     .hero p { font-size: 1.2rem; color: var(--muted); max-width: 700px; margin: 0 auto 2rem; }
