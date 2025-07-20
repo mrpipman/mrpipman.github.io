@@ -58,47 +58,12 @@
       width: 100%;
     }
 
-    /* Ensure Schedule button aligned */
-    #scheduleBtn { margin: 0 !important; } */
-    .hero-buttons {
-      display: flex;
-      justify-content: center;
-      gap: var(--spacing);
-      margin-top: var(--spacing);
-    }
-
-    /* Center contact form button and inputs */
-    #contact .contact-form {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: var(--spacing);
-    }
-    #contact .contact-form input,
-    #contact .contact-form textarea {
-      max-width: 400px;
-      width: 100%;
-    }
-    #contact .contact-form button.btn {
-      max-width: 240px;
-      width: 100%;
-    }
-
     /* Ensure Schedule button not misaligned */
-    #scheduleBtn {
-      margin: 0;
-    }
+    #scheduleBtn { margin: 0; }
+
+    /* Hero */
     .hero h1 { font-size: 3rem; margin-bottom: var(--spacing); }
     .hero p { font-size: 1.2rem; color: var(--muted); max-width: 700px; margin: 0 auto 2rem; }
-    .hero .btn {
-      display: inline-block;
-      margin: 0 0.5rem;
-      padding: 1rem 2rem;
-      border-radius: var(--radius);
-      text-transform: uppercase;
-      font-weight: 600;
-      transition: background 0.3s;
-    }
     .hero .btn.primary {
       background: var(--secondary);
       color: var(--primary);
@@ -107,7 +72,6 @@
       background: var(--accent);
       color: var(--secondary);
     }
-    .hero .btn.primary:hover { background: var(--accent); }
     .hero .btn.secondary {
       background: var(--primary);
       border: 2px solid var(--secondary);
@@ -117,7 +81,6 @@
       background: var(--bg-light);
       color: var(--primary);
     }
-    .hero .btn.secondary:hover { background: var(--bg-light); }
 
     /* Features */
     .features {
@@ -234,10 +197,9 @@
       transition: background 0.3s, color 0.3s;
     }
     .contact-form button:hover {
-      background: var(--muted);
-      color: var(--primary);
+      background: var(--accent);
+      color: var(--secondary);
     }
-    .contact-form button:hover { background: var(--accent); }
 
     /* Footer */
     footer {
@@ -257,21 +219,21 @@
 
     /* Responsive */
     @media(max-width: 768px) {
-      .hero h1 { font-size: 2.5rem; }
-      .features,
+      header.hero h1 { font-size: 2.5rem; }
+      section.features,
       .testimonials-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
 
 <body>
-    <!-- Hero -->
+  <!-- Hero -->
   <section class="hero">
     <h1>Exclusive Acquisition: Digital Trade Credit Bank</h1>
     <p>Acquire a fully‑operational fintech asset underwriting up to <strong>$1 Billion</strong> in trade credit. Turnkey setup—go live in under 14 days with escrow‑backed assurance.</p>
-    <div class="hero-buttons" style="display:flex;justify-content:center;gap:1rem;margin-top:1rem;">
+    <div class="hero-buttons">
       <a href="assets/docs/DTCB_NDA.pdf" download class="btn primary">Download NDA</a>
-      <button type="button" class="btn primary" id="scheduleBtn">Schedule 15 Min Call</button>
+      <button type="button" class="btn secondary" id="scheduleBtn">Schedule 15 Min Call</button>
     </div>
   </section>
 
@@ -324,12 +286,18 @@
     </div>
   </section>
 
-    <!-- FAQ -->
+  <!-- FAQ -->
   <section id="faq">
     <div class="inner">
       <h2>Have Questions?</h2>
-      <p>All commercial and technical details, including valuation, customer metrics, and financial performance, are available upon signing an NDA.
-      Reach out, and we'll share a comprehensive prospectus immediately.</p>
+      <dl>
+        <dt>What details are included with the NDA?</dt>
+        <dd>Full valuation, customer metrics, and financial performance in our secure VDR.</dd>
+        <dt>How long is the due diligence period?</dt>
+        <dd>72-hour review period, with escrow protection until completion.</dd>
+        <dt>Can I integrate this platform with my existing systems?</dt>
+        <dd>Yes: API and prebuilt connectors for major ERPs and payment gateways.</dd>
+      </dl>
     </div>
   </section>
 
@@ -337,13 +305,11 @@
   <section id="contact">
     <div class="inner">
       <h2>Request Deal Memo & NDA</h2>
-      <form class="contact-form" action="mailto:sales@digitaltradebank.com" method="post" style="display:flex;flex-direction:column;align-items:center;gap:1rem;">
-        <input type="text" name="name" placeholder="Your Name" required style="max-width:400px;width:100%;" />
-        <input type="email" name="email" placeholder="Your Email" required style="max-width:400px;width:100%;" />
-        <input type="text" name="company" placeholder="Company" required style="max-width:400px;width:100%;" />
-        <label style="color:var(--primary);">Attach Signed NDA:</label>
-        <input type="file" name="signedNda" accept="application/pdf" style="max-width:400px;width:100%;" />
-        <button type="submit" class="btn primary" style="background:#fff;color:#000;border:2px solid #000;max-width:200px;width:100%;">Send NDA & Info</button>
+      <form class="contact-form" action="mailto:sales@digitaltradebank.com" method="post">
+        <input type="text" name="name" placeholder="Your Name" required />
+        <input type="email" name="email" placeholder="Your Email" required />
+        <input type="text" name="company" placeholder="Company" required />
+        <button type="submit" class="btn primary">Send NDA & Info</button>
       </form>
     </div>
   </section>
@@ -358,10 +324,10 @@
     </ul>
   </footer>
 
-    <!-- Calendly embed script -->
+  <!-- Calendly embed script -->
   <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
   <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript"></script>
-  <script type="text/javascript">
+  <script>
     document.getElementById('scheduleBtn').addEventListener('click', function() {
       Calendly.initPopupWidget({ url: 'https://calendly.com/your-calendar-link?hide_event_type_details=1&background_color=000000&text_color=ffffff' });
       return false;
@@ -375,5 +341,4 @@
   <script src="assets/js/util.js"></script>
   <script src="assets/js/main.js"></script>
 </body>
-
 </html>
