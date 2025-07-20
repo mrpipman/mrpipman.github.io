@@ -90,6 +90,41 @@
     #about h2 { font-size: 2rem; margin-bottom: 1rem; }
     #about p { font-size: 1.1rem; color: var(--muted); }
 
+    /* Testimonials */
+    #testimonials { padding: 4rem 2rem; }
+    #testimonials .inner {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    #testimonials h2 { text-align: center; margin-bottom: 2rem; }
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+    .testimonial {
+      background: var(--secondary);
+      border: 1px solid var(--muted);
+      border-radius: var(--radius);
+      padding: 2rem;
+      font-style: italic;
+      position: relative;
+    }
+    .testimonial::before {
+      content: '“';
+      font-size: 3rem;
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      color: var(--bg-light);
+    }
+    .testimonial-author {
+      text-align: right;
+      margin-top: 1rem;
+      font-weight: 600;
+      color: var(--primary);
+    }
+
     /* FAQ */
     #faq {
       background: var(--bg-light);
@@ -158,12 +193,12 @@
 </head>
 
 <body>
-  <!-- Hero -->
+    <!-- Hero -->
   <section class="hero">
     <h1>Exclusive Acquisition: Digital Trade Credit Bank</h1>
     <p>Acquire a fully‑operational fintech asset underwriting up to <strong>$1 Billion</strong> in trade credit. Turnkey setup—go live in under 14 days with escrow‑backed assurance.</p>
-    <a href="https://docusign.com/nda" class="btn primary">Sign NDA</a>
-    <a href="https://calendly.com/book" class="btn secondary">Book a 15 Min Call</a>
+    <a href="assets/docs/DTCB_NDA.pdf" download="DTCB_NDA.pdf" class="btn primary">Download NDA</a>
+    <button type="button" class="btn secondary" id="scheduleBtn">Schedule 15 Min Call</button>
   </section>
 
   <!-- Features -->
@@ -228,11 +263,11 @@
   <section id="contact">
     <div class="inner">
       <h2>Request Deal Memo & NDA</h2>
-      <form class="contact-form" action="mailto:sales@digitaltradebank.com" method="post">
+      <form class="contact-form" action="mailto:sales@digitaltradebank.com" method="post" style="text-align: center;">
         <input type="text" name="name" placeholder="Your Name" required />
         <input type="email" name="email" placeholder="Your Email" required />
         <input type="text" name="company" placeholder="Company" required />
-        <button type="submit" class="btn primary">Send NDA & Info</button>
+        <button type="submit" class="btn secondary" style="background: #fff; color: #000; border: 2px solid #000;">Send NDA & Info</button>
       </form>
     </div>
   </section>
@@ -246,6 +281,16 @@
       <li><a href="#" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
     </ul>
   </footer>
+
+    <!-- Calendly embed script -->
+  <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+  <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript"></script>
+  <script type="text/javascript">
+    document.getElementById('scheduleBtn').addEventListener('click', function() {
+      Calendly.initPopupWidget({ url: 'https://calendly.com/your-calendar-link?hide_event_type_details=1&background_color=000000&text_color=ffffff' });
+      return false;
+    });
+  </script>
 
   <!-- Scripts -->
   <script src="assets/js/jquery.min.js"></script>
