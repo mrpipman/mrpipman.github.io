@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Acquire Digital Trade Credit Bank: turnkey fintech platform underwriting up to $1B in trade credit. Live in 14 days with escrow-backed security.">
   <meta name="robots" content="index, follow">
 
@@ -76,7 +76,6 @@
       border: 2px solid var(--accent);
     }
     .btn-secondary:hover { background: var(--accent); color: #fff; transform: translateY(-2px); }
-    /* Box styling */
     .box {
       background: #fff;
       border: 1px solid var(--bg-light);
@@ -85,7 +84,6 @@
       margin-bottom: var(--spacing);
       box-shadow: 0 2px 8px rgba(0,0,0,0.05);
     }
-    /* Responsive adjustments */
     @media(max-width:768px){
       h1 { font-size: 2rem; }
       .hero-content { padding: 2rem 1rem !important; }
@@ -94,7 +92,7 @@
   </style>
 
   <!-- External CSS -->
-  <link rel="stylesheet" href="assets/css/main.min.css" integrity="sha384-..." crossorigin="anonymous">
+  <link rel="stylesheet" href="assets/css/main.min.css" crossorigin="anonymous">
 </head>
 <body>
   <a class="sr-only" href="#main-content">Skip to main content</a>
@@ -104,11 +102,11 @@
     <div class="container hero-content" id="main-content" style="text-align: center; padding: 4rem 1rem;">
       <h1>Acquire Digital Trade Credit Bank</h1>
       <p style="color: #E0E6F3; max-width: 700px; margin: 0 auto 2rem;">
-        Fully operational fintech platform underwriting up to <strong>$1 Billion</strong> in trade credit. Launch in just 14 days with escrow‑backed assurance.
+        Fully operational fintech platform underwriting up to <strong>$1 Billion</strong> in trade credit. Launch in just 14 days with escrow‑backed assurance.
       </p>
       <div style="display: inline-flex; gap: 1rem; flex-wrap: wrap; justify-content: center;">
-        <a href="assets/docs/UBIQUO_NDA.pdf" download class="btn btn-secondary">Download NDA</a>
-        <button id="scheduleBtn" class="btn btn-primary">Schedule 30 Min Call</button>
+        <a href="assets/docs/Nda.pdf" download class="btn btn-secondary">Download NDA</a>
+        <button id="scheduleBtn" class="btn btn-primary">Schedule 30 Min Call</button>
       </div>
     </div>
   </header>
@@ -129,7 +127,7 @@
           <h3>Immediate Revenue</h3>
           <ul>
             <li>Proven fee-based model with existing pipeline</li>
-            <li>Start earning from <strong>day 1</strong></li>
+            <li>Start earning from <strong>day 1</strong></li>
           </ul>
         </li>
         <li>
@@ -155,7 +153,7 @@
     <div class="box">
       <h2 id="about-heading">Why This Matters</h2>
       <ul>
-        <li><strong>Speed to Market:</strong> Launch in just <strong>14 days</strong>, not months.</li>
+        <li><strong>Speed to Market:</strong> Launch in just <strong>14 days</strong>, not months.</li>
         <li><strong>Cost Savings:</strong> Avoid $5M+ in build and compliance costs.</li>
         <li><strong>High‑Margin Revenue:</strong> Capture subscription, transaction & data streams immediately.</li>
       </ul>
@@ -177,10 +175,10 @@
         </thead>
         <tbody>
           <tr>
-            <td style="padding:1rem;">14 Days</td>
+            <td style="padding:1rem;">14 Days</td>
             <td style="padding:1rem;">$1B+</td>
             <td style="padding:1rem;">150%↑</td>
-            <td style="padding:1rem;">72 hrs</td>
+            <td style="padding:1rem;">72 hrs</td>
           </tr>
         </tbody>
       </table>
@@ -255,8 +253,8 @@
   </footer>
 
   <!-- Calendly Widget -->
-  <script src="https://assets.calendly.com/assets/external/widget.js" async defer></script>
-  <script>
+  <script src="https://assets.calendly.com/assets/external/widget.js" defer></script>
+  <script defer>
     document.getElementById('scheduleBtn').addEventListener('click', function() {
       Calendly.initPopupWidget({ url: 'https://calendly.com/ubiquocorp/30min?hide_gdpr_banner=1' });
       return false;
@@ -264,6 +262,6 @@
   </script>
 
   <!-- Main JS -->
-  <script src="assets/js/main.min.js" async defer></script>
+  <script src="assets/js/main.min.js" defer></script>
 </body>
 </html>
