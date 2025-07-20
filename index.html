@@ -11,12 +11,12 @@
     /* Global Reset & Variables */
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
     :root {
-      --primary: #fff; /* text and white elements */
-      --secondary: #000; /* background black */
-      --accent: #1e90ff; /* accent blue on dark */
-      --text: #fff; /* main text white */
-      --muted: #ccc; /* muted text light gray */
-      --bg-light: #111; /* slight light for sections */
+      --primary: #fff; /* text */
+      --secondary: #000; /* background */
+      --accent: #1e90ff; /* accent color */
+      --text: #fff; /* main text color */
+      --muted: #ccc; /* muted text color */
+      --bg-light: #111; /* section background */
       --radius: 8px;
       --spacing: 1rem;
     }
@@ -26,6 +26,7 @@
       color: var(--text);
       line-height: 1.6;
     }
+    strong { color: var(--accent); }
     a { color: var(--accent); text-decoration: none; }
     h1, h2, h3 { color: var(--primary); margin-bottom: 0.5rem; }
     p, li, dd { margin-bottom: var(--spacing); }
@@ -154,7 +155,8 @@
       width: 100%;
     }
     .contact-form button {
-      align-self: center;
+      display: block;
+      margin: var(--spacing) auto;
       padding: 1rem 2rem;
       border: none;
       background: var(--primary);
