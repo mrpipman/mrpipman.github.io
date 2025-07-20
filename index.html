@@ -58,10 +58,12 @@
     </nav>
     <div class="container" id="main-content">
       <h1>Exclusive Acquisition: Digital Trade Credit Bank</h1>
-      <p>Acquire a fully operational fintech platform underwriting up to <strong>$1&nbsp;Billion</strong> in trade credit. Turnkey integration—go live in under 14 days with escrow-backed assurance.</p>
+      <p>Acquire a fully operational fintech platform underwriting up to <strong>$1 Billion</strong> in trade credit. Turnkey integration—go live in under 14 days with escrow-backed assurance.</p>
       <div class="hero-buttons">
-        <a href="assets/docs/DTCB_NDA.pdf" download class="btn btn-secondary" aria-label="Download NDA">Download NDA</a>
-        <button id="scheduleBtn" class="btn btn-primary" aria-haspopup="dialog" aria-controls="calendly-popup">Schedule 15 Min Call</button>
+        <!-- Update NDA file path -->
+        <a href="/assets/docs/UBIQUO_NDA.pdf" download class="btn btn-secondary" aria-label="Download NDA">Download NDA</a>
+        <!-- Updated Calendly link -->
+        <button id="scheduleBtn" class="btn btn-primary" aria-haspopup="dialog" aria-controls="calendly-popup">Schedule 30 Min Call</button>
       </div>
     </div>
   </header>
@@ -141,7 +143,7 @@
   <!-- Contact -->
   <section id="contact" class="container" aria-labelledby="contact-heading">
     <h2 id="contact-heading">Get the Deal Memo & NDA</h2>
-    <form class="contact-form" action="mailto:sales@digitaltradebank.com" method="post" enctype="multipart/form-data">
+    <form class="contact-form" action="mailto:ubiquocorp@gmail.com" method="post" enctype="multipart/form-data">
       <label for="name">Full Name</label>
       <input id="name" type="text" name="name" required>
       <label for="email">Business Email</label>
@@ -157,7 +159,7 @@
   <!-- Footer -->
   <footer role="contentinfo">
     <div class="container">
-      <p>&copy; 2025 VC Partners. All rights reserved.</p>
+      <p>&copy; 2025 UbiquoCorp. All rights reserved.</p>
       <ul class="icons" aria-label="Social media">
         <li><a href="#" aria-label="Twitter"><i class="fab fa-twitter" aria-hidden="true"></i></a></li>
         <li><a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin" aria-hidden="true"></i></a></li>
@@ -168,7 +170,12 @@
 
   <!-- External Scripts -->
   <script src="https://assets.calendly.com/assets/external/widget.js" async defer></script>
+  <script>
+    document.getElementById('scheduleBtn').addEventListener('click', function() {
+      Calendly.initPopupWidget({ url: 'https://calendly.com/ubiquocorp/30min?hide_gdpr_banner=1' });
+      return false;
+    });
+  </script>
   <script src="assets/js/main.min.js" async defer></script>
 </body>
 </html>
-
