@@ -218,8 +218,10 @@
   <section class="hero">
     <h1>Exclusive Acquisition: Digital Trade Credit Bank</h1>
     <p>Acquire a fully‑operational fintech asset underwriting up to <strong>$1 Billion</strong> in trade credit. Turnkey setup—go live in under 14 days with escrow‑backed assurance.</p>
-    <a href="assets/docs/DTCB_NDA.pdf" download="DTCB_NDA.pdf" class="btn primary">Download NDA</a>
-    <button type="button" class="btn secondary" id="scheduleBtn">Schedule 15 Min Call</button>
+    <div class="hero-buttons" style="display:flex;justify-content:center;gap:1rem;margin-top:1rem;">
+      <a href="assets/docs/DTCB_NDA.pdf" download class="btn primary">Download NDA</a>
+      <button type="button" class="btn secondary" id="scheduleBtn">Schedule 15 Min Call</button>
+    </div>
   </section>
 
   <!-- Features -->
@@ -284,11 +286,13 @@
   <section id="contact">
     <div class="inner">
       <h2>Request Deal Memo & NDA</h2>
-      <form class="contact-form" action="mailto:sales@digitaltradebank.com" method="post" style="text-align: center;">
-        <input type="text" name="name" placeholder="Your Name" required />
-        <input type="email" name="email" placeholder="Your Email" required />
-        <input type="text" name="company" placeholder="Company" required />
-        <button type="submit" class="btn secondary" style="background: #fff; color: #000; border: 2px solid #000;">Send NDA & Info</button>
+      <form class="contact-form" action="mailto:sales@digitaltradebank.com" method="post" style="display:flex;flex-direction:column;align-items:center;gap:1rem;">
+        <input type="text" name="name" placeholder="Your Name" required style="max-width:400px;width:100%;" />
+        <input type="email" name="email" placeholder="Your Email" required style="max-width:400px;width:100%;" />
+        <input type="text" name="company" placeholder="Company" required style="max-width:400px;width:100%;" />
+        <label style="color:var(--primary);">Attach Signed NDA:</label>
+        <input type="file" name="signedNda" accept="application/pdf" style="max-width:400px;width:100%;" />
+        <button type="submit" class="btn secondary" style="background:#fff;color:#000;border:2px solid #000;max-width:200px;width:100%;">Send NDA & Info</button>
       </form>
     </div>
   </section>
