@@ -36,62 +36,79 @@
       --font: 'Inter', sans-serif;
     }
     *,*::before,*::after { box-sizing: border-box; }
-    body { margin:0; font-family: var(--font); color: var(--primary); background: var(--secondary); line-height:1.6; }
-    a { text-decoration:none; color:inherit; }
-    img { max-width:100%; display:block; }
+    body {
+      margin: 0;
+      font-family: var(--font);
+      color: var(--primary);
+      background: var(--secondary);
+      line-height: 1.6;
+    }
+    a { text-decoration: none; color: inherit; }
+    img { max-width: 100%; display: block; }
     header, section, footer { padding: var(--spacing) 0; }
-    .container { width:90%; max-width:1200px; margin:0 auto; padding: 0 var(--spacing); }
-    h1,h2,h3,p,ul,dl,dt,dd { margin:0 0 var(--spacing) 0; }
-    ul, dl { padding:0; list-style:none; }
-    .btn { display:inline-block; padding:.75rem 1.5rem; border-radius:var(--radius); font-weight:600; text-transform:uppercase; cursor:pointer; transition:background .3s,color .3s; }
-    .btn-primary { background:var(--accent); color:#fff; border:2px solid var(--accent); }
-    .btn-primary:hover { background:#005bb5; }
-    .btn-secondary { background:transparent; color:var(--accent); border:2px solid var(--accent); }
-    .btn-secondary:hover { background:var(--accent); color:#fff; }
-
-    /* New “box” utility */
+    .container { width: 90%; max-width: 1200px; margin: 0 auto; padding: 0 var(--spacing); }
+    h1 { font-size: 2.5rem; line-height: 1.2; margin-bottom: var(--spacing); }
+    h2 { font-size: 1.75rem; margin-bottom: var(--spacing); }
+    h3 { font-size: 1.25rem; margin-bottom: .5rem; }
+    p { margin-bottom: var(--spacing); color: var(--muted); }
+    ul, dl { margin-bottom: var(--spacing); padding: 0; list-style: none; }
+    ul ul { padding-left: 1rem; }
+    .btn {
+      display: inline-block;
+      padding: .75rem 1.5rem;
+      border-radius: var(--radius);
+      font-weight: 600;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: background .3s, color .3s, transform .2s;
+      outline: none;
+    }
+    .btn:focus { box-shadow: 0 0 0 3px rgba(0,115,230,0.4); }
+    .btn-primary {
+      background: var(--accent);
+      color: #fff;
+      border: 2px solid var(--accent);
+    }
+    .btn-primary:hover { background: #005bb5; transform: translateY(-2px); }
+    .btn-secondary {
+      background: transparent;
+      color: var(--accent);
+      border: 2px solid var(--accent);
+    }
+    .btn-secondary:hover { background: var(--accent); color: #fff; transform: translateY(-2px); }
+    /* Box styling */
     .box {
       background: #fff;
-      border: 1px solid var(--muted);
+      border: 1px solid var(--bg-light);
       border-radius: var(--radius);
       padding: var(--spacing);
       margin-bottom: var(--spacing);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+    /* Responsive adjustments */
+    @media(max-width:768px){
+      h1 { font-size: 2rem; }
+      .hero-content { padding: 2rem 1rem !important; }
+      .box { padding: 1rem; }
     }
   </style>
 
   <!-- External CSS -->
   <link rel="stylesheet" href="assets/css/main.min.css" integrity="sha384-..." crossorigin="anonymous">
-
-  <!-- Structured Data -->
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"Product",
-    "name":"Digital Trade Credit Bank Acquisition",
-    "description":"Turnkey fintech asset underwriting up to $1B in trade credit.",
-    "brand":"VC Partners",
-    "offers":{
-      "@type":"Offer",
-      "url":"https://yourdomain.com",
-      "price":"Contact for pricing",
-      "availability":"https://schema.org/InStock"
-    }
-  }
-  </script>
 </head>
 <body>
   <a class="sr-only" href="#main-content">Skip to main content</a>
 
   <!-- Hero -->
-  <header role="banner" style="background:#08245F;color:#fff;">
-    <div class="container" id="main-content" style="text-align:center; padding:4rem 1rem;">
-      <h1 style="font-size:3rem; margin-bottom:1rem;">Acquire Digital Trade Credit Bank</h1>
-      <p style="font-size:1.125rem; color:#E0E6F3; max-width:700px; margin:0 auto 2rem;">
-        Fully operational fintech platform underwriting up to <strong>$1 Billion</strong> in trade credit. Launch in just 14 days with escrow‑backed assurance.
+  <header role="banner" style="background: #08245F; color: #fff;">
+    <div class="container hero-content" id="main-content" style="text-align: center; padding: 4rem 1rem;">
+      <h1>Acquire Digital Trade Credit Bank</h1>
+      <p style="color: #E0E6F3; max-width: 700px; margin: 0 auto 2rem;">
+        Fully operational fintech platform underwriting up to <strong>$1 Billion</strong> in trade credit. Launch in just 14 days with escrow‑backed assurance.
       </p>
-      <div style="display:inline-flex; gap:1rem;">
+      <div style="display: inline-flex; gap: 1rem; flex-wrap: wrap; justify-content: center;">
         <a href="assets/docs/UBIQUO_NDA.pdf" download class="btn btn-secondary">Download NDA</a>
-        <button id="scheduleBtn" class="btn btn-primary">Schedule 30 Min Call</button>
+        <button id="scheduleBtn" class="btn btn-primary">Schedule 30 Min Call</button>
       </div>
     </div>
   </header>
@@ -100,7 +117,7 @@
   <section id="features" class="container" aria-labelledby="features-heading">
     <div class="box">
       <h2 id="features-heading">Key Benefits</h2>
-      <ul style="display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:2rem; list-style:none; padding:0; margin:2rem 0 0 0;">
+      <ul style="display: grid; grid-template-columns: repeat(auto-fit,minmax(240px,1fr)); gap: 1.5rem;">
         <li>
           <h3>Licensed &amp; Compliant</h3>
           <ul>
@@ -109,24 +126,24 @@
           </ul>
         </li>
         <li>
-          <h3>Immediate Revenue Generation</h3>
+          <h3>Immediate Revenue</h3>
           <ul>
-            <li>Proven fee‑based model with existing pipeline</li>
-            <li>Start earning from <strong>day 1</strong></li>
+            <li>Proven fee-based model with existing pipeline</li>
+            <li>Start earning from <strong>day 1</strong></li>
           </ul>
         </li>
         <li>
           <h3>Seamless Integrations</h3>
           <ul>
             <li>Prebuilt APIs for leading B2B networks</li>
-            <li>Plug‑and‑play connectivity to ERPs & payment gateways</li>
+            <li>Plug‑and‑play ERP & gateway connectors</li>
           </ul>
         </li>
         <li>
           <h3>Escrow‑Backed Protection</h3>
           <ul>
-            <li>Funds held in escrow until due diligence completes</li>
-            <li>Full capital security throughout review period</li>
+            <li>Funds secured in escrow until due diligence</li>
+            <li>Full capital protection throughout review</li>
           </ul>
         </li>
       </ul>
@@ -137,8 +154,8 @@
   <section id="about" class="container" aria-labelledby="about-heading">
     <div class="box">
       <h2 id="about-heading">Why This Matters</h2>
-      <ul style="list-style:none; padding:0; margin:2rem 0;">
-        <li><strong>Speed to Market:</strong> Launch in just <strong>14 days</strong>, not months.</li>
+      <ul>
+        <li><strong>Speed to Market:</strong> Launch in just <strong>14 days</strong>, not months.</li>
         <li><strong>Cost Savings:</strong> Avoid $5M+ in build and compliance costs.</li>
         <li><strong>High‑Margin Revenue:</strong> Capture subscription, transaction & data streams immediately.</li>
       </ul>
@@ -149,19 +166,23 @@
   <section id="stats" class="container" aria-labelledby="stats-heading">
     <div class="box">
       <h2 id="stats-heading">At a Glance</h2>
-      <table style="width:100%; max-width:800px; margin:2rem auto; border-collapse:collapse; text-align:center;">
-        <tr>
-          <th style="padding:1rem; border-bottom:1px solid #ddd;">Go‑Live Time</th>
-          <th style="padding:1rem; border-bottom:1px solid #ddd;">Underwriting Capacity</th>
-          <th style="padding:1rem; border-bottom:1px solid #ddd;">Avg. Revenue Lift</th>
-          <th style="padding:1rem; border-bottom:1px solid #ddd;">Due Diligence</th>
-        </tr>
-        <tr>
-          <td style="padding:1rem;">14 Days</td>
-          <td style="padding:1rem;">$1B+</td>
-          <td style="padding:1rem;">150%↑</td>
-          <td style="padding:1rem;">72 hrs</td>
-        </tr>
+      <table style="width:100%; border-collapse: collapse; text-align:center; margin-top:1rem;">
+        <thead>
+          <tr>
+            <th style="padding:1rem; border-bottom:1px solid var(--bg-light);">Go‑Live Time</th>
+            <th style="padding:1rem; border-bottom:1px solid var(--bg-light);">Underwriting Capacity</th>
+            <th style="padding:1rem; border-bottom:1px solid var(--bg-light);">Avg. Revenue Lift</th>
+            <th style="padding:1rem; border-bottom:1px solid var(--bg-light);">Due Diligence</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td style="padding:1rem;">14 Days</td>
+            <td style="padding:1rem;">$1B+</td>
+            <td style="padding:1rem;">150%↑</td>
+            <td style="padding:1rem;">72 hrs</td>
+          </tr>
+        </tbody>
       </table>
     </div>
   </section>
@@ -170,7 +191,7 @@
   <section id="testimonials" class="container" aria-labelledby="testimonials-heading">
     <div class="box">
       <h2 id="testimonials-heading">Proven Success Stories</h2>
-      <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:2rem; margin:2rem 0;">
+      <div style="display: grid; grid-template-columns: repeat(auto-fit,minmax(300px,1fr)); gap: 1.5rem; margin-top: 1rem;">
         <blockquote style="border-left:4px solid var(--accent); padding-left:1rem;">
           <p>“This acquisition boosted our annual revenue by 150% in under six months.”</p>
           <footer>— Alice Johnson, CEO, Global Fintech Group</footer>
@@ -187,7 +208,7 @@
   <section id="faq" class="container" aria-labelledby="faq-heading">
     <div class="box">
       <h2 id="faq-heading">Frequently Asked Questions</h2>
-      <dl style="margin:2rem 0;">
+      <dl style="margin-top:1rem;">
         <dt style="font-weight:600; margin-top:1rem;">What’s included in the NDA?</dt>
         <dd style="margin-left:1rem;">Full valuation, performance metrics, customer data and secure VDR access.</dd>
         <dt style="font-weight:600; margin-top:1rem;">How long is due diligence?</dt>
@@ -203,15 +224,15 @@
     <div class="box">
       <h2 id="contact-heading">Request NDA & Deal Memo</h2>
       <form action="mailto:ubiquocorp@gmail.com" method="post" enctype="multipart/form-data"
-            style="display:grid; gap:1rem; max-width:600px; margin:0 auto;">
+            style="display:grid; gap:1rem; max-width:600px; margin-top:1rem;">
         <label for="name">Full Name</label>
-        <input id="name" type="text" name="name" required>
+        <input id="name" type="text" name="name" required style="padding:.75rem; border:1px solid var(--muted); border-radius:var(--radius);">
 
         <label for="email">Business Email</label>
-        <input id="email" type="email" name="email" required>
+        <input id="email" type="email" name="email" required style="padding:.75rem; border:1px solid var(--muted); border-radius:var(--radius);">
 
         <label for="company">Company</label>
-        <input id="company" type="text" name="company" required>
+        <input id="company" type="text" name="company" required style="padding:.75rem; border:1px solid var(--muted); border-radius:var(--radius);">
 
         <label for="signedNda">Attach Signed NDA</label>
         <input id="signedNda" type="file" name="signedNda" accept="application/pdf">
@@ -222,10 +243,10 @@
   </section>
 
   <!-- Footer -->
-  <footer style="background:var(--bg-light); text-align:center;">
+  <footer style="background: var(--bg-light); text-align:center;">
     <div class="container">
       <p>&copy; 2025 UbiquoCorp. All rights reserved.</p>
-      <ul style="display:inline-flex; gap:1rem; list-style:none; padding:0; margin:0;">
+      <ul style="display: inline-flex; gap:1rem; list-style:none; padding:0; margin:0;">
         <li><a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a></li>
         <li><a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a></li>
         <li><a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a></li>
