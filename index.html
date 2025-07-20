@@ -6,373 +6,134 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Digital Trade Credit Bank</title>
   <link rel="stylesheet" href="assets/css/main.css" />
-  <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-  <style>
-    /* Hero and Button Styling Fix */
-    .hero-buttons a.btn, .hero-buttons button.btn, .contact-form button.btn {
-      display: inline-block;
-      width: auto;
-      min-width: 200px;
-      text-align: center;
-      background: var(--secondary);
-      color: var(--primary);
-      border: 2px solid var(--primary);
-      border-radius: var(--radius);
-      padding: var(--spacing) 2rem;
-      text-transform: uppercase;
-      font-weight: 600;
-      transition: background 0.3s, color 0.3s;
-      margin: 0;
-    }
-    .hero-buttons a.btn:hover, .hero-buttons button.btn:hover, .contact-form button.btn:hover {
-      background: var(--primary);
-      color: var(--secondary);
-    }
-
-    /* Center hero buttons */
-    .hero-buttons {
-      display: flex;
-      justify-content: center;
-      gap: var(--spacing);
-      margin-top: var(--spacing);
-      align-items: center;
-    }
-
-    /* Remove individual margins in hero .btn */
-    .hero .btn { margin: 0 !important; }
-
-    /* Center contact form button and inputs */
-    #contact .contact-form {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: var(--spacing);
-    }
-    #contact .contact-form input,
-    #contact .contact-form textarea {
-      max-width: 400px;
-      width: 100%;
-    }
-    #contact .contact-form button.btn {
-      max-width: 240px;
-      width: 100%;
-    }
-
-    /* Ensure Schedule button aligned */
-    #scheduleBtn { margin: 0 !important; } */
-    .hero-buttons {
-      display: flex;
-      justify-content: center;
-      gap: var(--spacing);
-      margin-top: var(--spacing);
-    }
-
-    /* Center contact form button and inputs */
-    #contact .contact-form {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: var(--spacing);
-    }
-    #contact .contact-form input,
-    #contact .contact-form textarea {
-      max-width: 400px;
-      width: 100%;
-    }
-    #contact .contact-form button.btn {
-      max-width: 240px;
-      width: 100%;
-    }
-
-    /* Ensure Schedule button not misaligned */
-    #scheduleBtn {
-      margin: 0;
-    }
-    .hero h1 { font-size: 3rem; margin-bottom: var(--spacing); }
-    .hero p { font-size: 1.2rem; color: var(--muted); max-width: 700px; margin: 0 auto 2rem; }
-    .hero .btn {
-      display: inline-block;
-      margin: 0 0.5rem;
-      padding: 1rem 2rem;
-      border-radius: var(--radius);
-      text-transform: uppercase;
-      font-weight: 600;
-      transition: background 0.3s;
-    }
-    .hero .btn.primary {
-      background: var(--secondary);
-      color: var(--primary);
-    }
-    .hero .btn.primary:hover {
-      background: var(--accent);
-      color: var(--secondary);
-    }
-    .hero .btn.primary:hover { background: var(--accent); }
-    .hero .btn.secondary {
-      background: var(--primary);
-      border: 2px solid var(--secondary);
-      color: var(--secondary);
-    }
-    .hero .btn.secondary:hover {
-      background: var(--bg-light);
-      color: var(--primary);
-    }
-    .hero .btn.secondary:hover { background: var(--bg-light); }
-
-    /* Features */
-    .features {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 2rem;
-      max-width: 1000px;
-      margin: 3rem auto;
-      padding: 0 2rem;
-    }
-    .feature {
-      background: var(--secondary);
-      border: 1px solid var(--muted);
-      border-radius: var(--radius);
-      padding: 2rem 1.5rem;
-      text-align: center;
-      transition: transform 0.3s, box-shadow 0.3s;
-    }
-    .feature:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 8px 16px rgba(0,0,0,0.1);
-    }
-    .feature-icon { font-size: 2.5rem; margin-bottom: 1rem; color: var(--accent); }
-    .feature-title { font-size: 1.5rem; margin-bottom: 0.5rem; }
-    .feature-desc { font-size: 1rem; color: var(--muted); }
-
-    /* About */
-    #about {
-      background: var(--bg-light);
-      padding: 4rem 2rem;
-    }
-    #about .inner {
-      max-width: 800px;
-      margin: 0 auto;
-      text-align: center;
-    }
-    #about h2 { font-size: 2rem; margin-bottom: 1rem; }
-    #about p { font-size: 1.1rem; color: var(--muted); }
-
-    /* Testimonials */
-    #testimonials { padding: 4rem 2rem; }
-    #testimonials .inner {
-      max-width: 900px;
-      margin: 0 auto;
-    }
-    #testimonials h2 { text-align: center; margin-bottom: 2rem; }
-    .testimonials-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 2rem;
-    }
-    .testimonial {
-      background: var(--secondary);
-      border: 1px solid var(--muted);
-      border-radius: var(--radius);
-      padding: 2rem;
-      font-style: italic;
-      position: relative;
-    }
-    .testimonial::before {
-      content: '“';
-      font-size: 3rem;
-      position: absolute;
-      top: 10px;
-      left: 10px;
-      color: var(--bg-light);
-    }
-    .testimonial-author {
-      text-align: right;
-      margin-top: 1rem;
-      font-weight: 600;
-      color: var(--primary);
-    }
-
-    /* FAQ */
-    #faq {
-      background: var(--bg-light);
-      padding: 4rem 2rem;
-    }
-    #faq .inner { max-width: 800px; margin: 0 auto; }
-    #faq h2 { text-align: center; margin-bottom: 1.5rem; }
-    .faq dl { margin: 0; }
-    .faq dt { font-weight: 600; margin-top: 1rem; }
-    .faq dd { margin-left: 1rem; margin-bottom: 1rem; color: var(--muted); }
-
-    /* Contact */
-    #contact { padding: 4rem 2rem; }
-    #contact .inner { max-width: 600px; margin: 0 auto; }
-    #contact h2 { text-align: center; margin-bottom: 1.5rem; }
-    .contact-form {
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-    }
-    .contact-form input,
-    .contact-form textarea {
-      padding: 1rem;
-      border: 1px solid var(--muted);
-      border-radius: var(--radius);
-      font-size: 1rem;
-      width: 100%;
-    }
-    .contact-form button {
-      display: block;
-      margin: var(--spacing) auto;
-      padding: 1rem 2rem;
-      border: 2px solid var(--secondary);
-      background: var(--primary);
-      color: var(--secondary);
-      text-transform: uppercase;
-      font-weight: 600;
-      border-radius: var(--radius);
-      cursor: pointer;
-      transition: background 0.3s, color 0.3s;
-    }
-    .contact-form button:hover {
-      background: var(--muted);
-      color: var(--primary);
-    }
-    .contact-form button:hover { background: var(--accent); }
-
-    /* Footer */
-    footer {
-      background: var(--bg-light);
-      padding: 2rem;
-      text-align: center;
-      border-top: 1px solid var(--muted);
-    }
-    footer p { margin-bottom: 1rem; color: var(--muted); }
-    footer .icons { list-style: none; display: inline-flex; gap: 1rem; }
-    footer .icons li a {
-      font-size: 1.2rem;
-      color: var(--muted);
-      transition: color 0.3s;
-    }
-    footer .icons li a:hover { color: var(--primary); }
-
-    /* Responsive */
-    @media(max-width: 768px) {
-      .hero h1 { font-size: 2.5rem; }
-      .features,
-      .testimonials-grid { grid-template-columns: 1fr; }
-    }
-  </style>
+  <noscript>
+    <style>
+      body { background: #000; color: #fff; font-family: Arial, sans-serif; padding: 2rem; }
+      .no-js-banner { background: #222; color: #f00; padding: 1rem; margin-bottom: 2rem; border: 2px solid #f00; text-align: center; }
+    </style>
+    <div class="no-js-banner">JavaScript disabled. Enable JS for full functionality.</div>
+  </noscript>
 </head>
 
 <body>
-    <!-- Hero -->
-  <section class="hero">
-    <h1>Exclusive Acquisition: Digital Trade Credit Bank</h1>
-    <p>Acquire a fully‑operational fintech asset underwriting up to <strong>$1 Billion</strong> in trade credit. Turnkey setup—go live in under 14 days with escrow‑backed assurance.</p>
-    <div class="hero-buttons" style="display:flex;justify-content:center;gap:1rem;margin-top:1rem;">
-      <a href="assets/docs/DTCB_NDA.pdf" download class="btn primary">Download NDA</a>
-      <button type="button" class="btn primary" id="scheduleBtn">Schedule 15 Min Call</button>
+
+  <!-- Header -->
+  <header class="hero wrapper">
+    <div class="inner">
+      <h1>Exclusive Acquisition</h1>
+      <h2>Digital Trade Credit Bank</h2>
+      <p>Acquire a fully operational fintech asset underwriting up to <strong>$1 Billion</strong> in trade credit. Deploy in 14 days with escrow-backed assurance.</p>
+      <div class="hero-buttons">
+        <a href="assets/docs/DTCB_NDA.pdf" download class="btn primary">Download NDA</a>
+        <button id="scheduleBtn" class="btn primary">Schedule 15 Min Call</button>
+      </div>
     </div>
-  </section>
+  </header>
 
   <!-- Features -->
-  <section class="features">
-    <div class="feature">
-      <span class="feature-icon fa-cogs"></span>
-      <h3 class="feature-title">Fully Licensed & Compliant</h3>
-      <p class="feature-desc">All regulatory approvals, KYC, AML and infrastructure in place—no additional capex required.</p>
-    </div>
-    <div class="feature">
-      <span class="feature-icon fa-bolt"></span>
-      <h3 class="feature-title">Rapid ROI Potential</h3>
-      <p class="feature-desc">Generate revenue from day one with proven fee‑based model and existing customer pipeline.</p>
-    </div>
-    <div class="feature">
-      <span class="feature-icon fa-handshake"></span>
-      <h3 class="feature-title">Strategic Partnerships</h3>
-      <p class="feature-desc">Pre‑negotiated integrations with major B2B networks ensure immediate transaction flow.</p>
-    </div>
-    <div class="feature">
-      <span class="feature-icon fa-lock"></span>
-      <h3 class="feature-title">Risk‑Mitigated Transaction</h3>
-      <p class="feature-desc">Escrow‑backed sale structure protects your investment through due diligence.</p>
-    </div>
-  </section>
-
-  <!-- About -->
-  <section id="about">
+  <section class="features wrapper light">
     <div class="inner">
-      <h2>Why This Opportunity Matters</h2>
-      <p>This platform delivers immediate market access in trade finance, offering subscription fees, transaction fees, and data monetization. Investors save millions in build costs and capture high‑margin revenues.</p>
-    </div>
-  </section>
-
-  <!-- Testimonials -->
-  <section id="testimonials">
-    <div class="inner">
-      <h2>Proven Success Stories</h2>
-      <div class="testimonials-grid">
-        <div class="testimonial">
-          <p>“This acquisition boosted our annual revenue by 150% in under 6 months.”</p>
-          <p class="testimonial-author">— Alice Johnson, CEO, Global Fintech Group</p>
+      <h2>Key Benefits</h2>
+      <div class="grid-4">
+        <div class="card">
+          <span class="icon fa-cogs"></span>
+          <h3>Fully Licensed</h3>
+          <p>KYC, AML, and regulatory infrastructure in place. No extra CAPEX.</p>
         </div>
-        <div class="testimonial">
-          <p>“Zero downtime integration—our balance sheet strengthened immediately.”</p>
-          <p class="testimonial-author">— Bob Smith, CFO, TradeCapital Partners</p>
+        <div class="card">
+          <span class="icon fa-bolt"></span>
+          <h3>Rapid ROI</h3>
+          <p>Proven fee-based revenue model with existing pipeline.</p>
+        </div>
+        <div class="card">
+          <span class="icon fa-handshake"></span>
+          <h3>Strategic Partners</h3>
+          <p>Agreements with top B2B networks for instant settlement.</p>
+        </div>
+        <div class="card">
+          <span class="icon fa-lock"></span>
+          <h3>Risk Mitigation</h3>
+          <p>Escrow-backed sale protects capital during due diligence.</p>
         </div>
       </div>
     </div>
   </section>
 
-    <!-- FAQ -->
-  <section id="faq">
+  <!-- About -->
+  <section id="about" class="wrapper">
+    <div class="inner">
+      <h2>About the Platform</h2>
+      <p>This turnkey solution empowers SMEs and enterprises with end-to-end trade finance: real-time credit scoring, multi-currency disbursements, and data analytics.</p>
+    </div>
+  </section>
+
+  <!-- Use Cases -->
+  <section id="use-cases" class="wrapper light">
+    <div class="inner">
+      <h2>Use Cases</h2>
+      <div class="grid-4">
+        <div class="case"><h4>SME Cashflow</h4><p>Bridging liquidity gaps for small businesses.</p></div>
+        <div class="case"><h4>Global Trade</h4><p>Simplifying cross-border transactions.</p></div>
+        <div class="case"><h4>Supply Chain</h4><p>Optimizing supplier payment terms.</p></div>
+        <div class="case"><h4>Capital Efficiency</h4><p>Boosting working capital without debt.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section id="testimonials" class="wrapper">
+    <div class="inner">
+      <h2>Client Testimonials</h2>
+      <div class="grid-2">
+        <blockquote>
+          <p>“Boosted liquidity by 150% in under 6 months!”</p>
+          <cite>Alice Johnson, CEO, Global Fintech Group</cite>
+        </blockquote>
+        <blockquote>
+          <p>“Seamless integration with zero downtime.”</p>
+          <cite>Bob Smith, CFO, TradeCapital Partners</cite>
+        </blockquote>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="wrapper light">
     <div class="inner">
       <h2>Have Questions?</h2>
-      <p>All commercial and technical details, including valuation, customer metrics, and financial performance, are available upon signing an NDA.
-      Reach out, and we'll share a comprehensive prospectus immediately.</p>
+      <p>All details available upon signing NDA. Contact us for the full prospectus.</p>
     </div>
   </section>
 
   <!-- Contact -->
-  <section id="contact">
+  <section id="contact" class="wrapper">
     <div class="inner">
-      <h2>Request Deal Memo & NDA</h2>
-      <form class="contact-form" action="mailto:sales@digitaltradebank.com" method="post" style="display:flex;flex-direction:column;align-items:center;gap:1rem;">
-        <input type="text" name="name" placeholder="Your Name" required style="max-width:400px;width:100%;" />
-        <input type="email" name="email" placeholder="Your Email" required style="max-width:400px;width:100%;" />
-        <input type="text" name="company" placeholder="Company" required style="max-width:400px;width:100%;" />
-        <label style="color:var(--primary);">Attach Signed NDA:</label>
-        <input type="file" name="signedNda" accept="application/pdf" style="max-width:400px;width:100%;" />
-        <button type="submit" class="btn primary" style="background:#fff;color:#000;border:2px solid #000;max-width:200px;width:100%;">Send NDA & Info</button>
+      <h2>Request NDA & Info</h2>
+      <form class="contact-form" action="mailto:sales@digitaltradebank.com" method="post">
+        <input name="name" type="text" placeholder="Name" required />
+        <input name="email" type="email" placeholder="Email" required />
+        <input name="company" type="text" placeholder="Company" required />
+        <button type="submit" class="btn primary">Send NDA & Info</button>
       </form>
     </div>
   </section>
 
   <!-- Footer -->
-  <footer>
-    <p>&copy; 2025 VC Partners. All rights reserved.</p>
-    <ul class="icons">
-      <li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
-      <li><a href="#" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
-      <li><a href="#" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
-    </ul>
+  <footer class="wrapper light">
+    <div class="inner">
+      <p>&copy; 2025 VC Partners. All rights reserved.</p>
+      <ul class="icons">
+        <li><a class="icon brands fa-twitter" href="#"><span>Twitter</span></a></li>
+        <li><a class="icon brands fa-linkedin" href="#"><span>LinkedIn</span></a></li>
+        <li><a class="icon brands fa-github" href="#"><span>GitHub</span></a></li>
+      </ul>
+    </div>
   </footer>
 
-    <!-- Calendly embed script -->
-  <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
-  <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript"></script>
-  <script type="text/javascript">
-    document.getElementById('scheduleBtn').addEventListener('click', function() {
-      Calendly.initPopupWidget({ url: 'https://calendly.com/your-calendar-link?hide_event_type_details=1&background_color=000000&text_color=ffffff' });
-      return false;
-    });
-  </script>
+  <!-- Calendly Embed -->
+  <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
+  <script>document.getElementById('scheduleBtn').addEventListener('click',function(){Calendly.initPopupWidget({url:'https://calendly.com/your-calendar-link'});});</script>
 
-  <!-- Scripts -->
-  <script src="assets/js/jquery.min.js"></script>
-  <script src="assets/js/browser.min.js"></script>
-  <script src="assets/js/breakpoints.min.js"></script>
-  <script src="assets/js/util.js"></script>
   <script src="assets/js/main.js"></script>
 </body>
 
